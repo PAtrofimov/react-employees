@@ -1,0 +1,131 @@
+// acquaintance {
+
+.acquaintance {
+  padding: 76px 0px 80px 0;
+  @include respond-to(medium) {
+    & {
+      padding: 113px 0px 120px 0;
+    }
+  }
+  @include respond-to(large) {
+    & {
+      padding: 155px 0px 159px 0;
+    }
+  }
+  &__title {
+    font-weight: 400;
+    color: #212529;
+    text-align: center;
+  }
+
+  &__item {
+    margin: 30px 0 0 0;
+    padding: 0;
+    flex-direction: column;
+    @include respond-to(small) {
+      & {
+        flex-direction: column;
+      }
+    }
+    @include respond-to(medium) {
+      & {
+        margin: 67px 0 0 0;
+        padding: 0 27px 0 27px;
+        flex-direction: row;
+      }
+    }
+    @include respond-to(large) {
+      & {
+        margin: 64px 0 0 0;
+        padding: 0 27px 0 52px;
+        flex-direction: row;
+      }
+    }
+    display: flex;
+  }
+
+  &__image {
+    text-align: center;
+    margin: 0 0 35px 0;
+    @include respond-to(medium) {
+      & {
+        flex: 0 0 35%;
+        margin: 0;
+        text-align: initial;
+      }
+    }
+    @include respond-to(large) {
+      & {
+        flex: 0 0 36%;
+
+      }
+    }
+    position: relative;
+
+    img {
+      position: static;
+      width: 81%;
+
+      @include respond-to(medium) {
+        & {
+          object-fit: cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  &__details {
+    flex: 1 1 auto;
+    margin: 0 12px;
+    text-align: center;
+    @include respond-to(medium) {
+      & {
+        margin: 0 0 0 28px;
+        text-align: initial;
+      }
+    }
+    @include respond-to(large) {
+      & {
+        margin: 0 0 0 52px;
+      }
+    }
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    color: #212529;
+  }
+
+  &__text {
+    text-align: justify;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #4c4b4b;
+    margin: 20px 0 0 0;
+  }
+
+  &__tex1 {
+  }
+
+  &__text2 {
+    margin: 25px 0 0 0;
+  }
+
+  &__actions {
+    margin: 30px 0 0 0;
+  }
+
+  &__btn {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ef5b4c;
+  }
+}
+
+// } acquaintance
