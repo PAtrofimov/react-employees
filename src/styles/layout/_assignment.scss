@@ -1,0 +1,95 @@
+// assignment {
+
+  .assignment-container {
+    max-width: 327px;
+    @include respond-to(small) {
+      & {
+        margin: 0 auto;
+        text-align: center;
+      }
+    }
+    @include respond-to(medium) {
+      & {
+        max-width: 435px;
+        margin: initial;
+        text-align: initial;
+      }
+    }
+
+    @include respond-to(large) {
+      & {
+        max-width: 534px;
+      }
+    }
+  }
+  .assignment {
+    background: no-repeat center/cover
+        url("../../assets/assignment/banner-photo.jpg");
+    padding: 67px 0px 75px 5px;
+    @include respond-to(medium) {
+      & {
+        padding: 118px 0px 69px 30px;
+      }
+    }
+    @include respond-to(large) {
+      & {
+        padding: 170px 35px 115px 30px;
+      }
+    }
+    &__title {
+
+      font-weight: 400;
+      text-transform: uppercase;
+      color: #ffffff;
+
+    }
+
+    &__text {
+      font-size: 16px;
+      line-height: 24px;
+      font-weight: 400;
+      color: #ffffff;
+      margin: 23px 0 0 0;
+      @include respond-to(medium) {
+        & {
+          margin: 25px 0 0 0;
+        }
+      }
+      @include respond-to(large) {
+        & {
+          margin: 22px 0 0 0;
+        }
+      }
+
+      &--extra {
+        display: none;
+        @include respond-to(medium) {
+          & {
+            display: inline;
+          }
+        }
+      }
+    }
+
+    &__btn {
+      display: inline-block;
+      background-color: #ef5b4c;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #fefefe;
+      padding: 11px 59px;
+    }
+
+    &__actions {
+      margin: 23px 0 0 0;
+      @include respond-to(medium) {
+        & {
+          margin: 34px 0 0 0;
+        }
+      }
+    }
+
+  }
+
+  // } assignment
