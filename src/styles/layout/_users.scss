@@ -1,0 +1,213 @@
+// cheerful users {
+
+.users {
+  padding: 75px 0 81px 0;
+  background-color: #f9f9f3;
+  @include respond-to(medium) {
+    & {
+      padding: 114px 0 122px 0;
+      background-color: #f9f9f3;
+    }
+  }
+  @include respond-to(large) {
+    & {
+      padding: 156px 0 163px 0;
+      background-color: #f9f9f3;
+    }
+  }
+  &__section {
+  }
+
+  &__header {
+    text-align: center;
+  }
+
+  &__title {
+    font-weight: 400;
+    color: #212529;
+    margin: 0px 0 14px 0;
+    @include respond-to(medium) {
+      & {
+        margin: 0px 0 20px 0;
+      }
+    }
+  }
+
+  &__attention {
+    font-size: 16px;
+    font-weight: 400;
+    color: #4c4b4b;
+  }
+
+  &__grid {
+    margin: 38px auto 0px auto;
+    max-width: 300px;
+    @include respond-to(medium) {
+      & {
+        max-width: 708px;
+        margin: 82px auto 0 auto;
+      }
+    }
+    @include respond-to(large) {
+      & {
+        max-width: 950px;
+      }
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 40px 30px;
+
+    margin: 0 0 40px 0;
+    @include respond-to(medium) {
+      & {
+        grid-template-columns: repeat(auto-fill, minmax(216px, 1fr));
+        grid-template-rows: 1fr;
+      }
+    }
+    @include respond-to(large) {
+      & {
+        gap: 53px 30px;
+      }
+    }
+
+    &:not(:first-child) {
+      display: none;
+      @include respond-to(medium) {
+        & {
+          display: grid;
+        }
+      }
+    }
+  }
+
+  &__footer {
+    text-align: center;
+    margin-top: 35px;
+    @include respond-to(large) {
+      & {
+        margin-top: 35px;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fefefe;
+    background-color: #ef5b4c;
+    border-radius: 4px;
+    padding: 10px 60px;
+  }
+}
+
+.user {
+  max-width: 205px;
+  margin: 0 auto 40px auto;
+  @include respond-to(medium) {
+    & {
+      max-width: 203px;
+      margin: 0 auto;
+    }
+  }
+  @include respond-to(large) {
+    & {
+      max-width: 205px;
+      margin: 0 auto;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+.user-item {
+  &__header {
+    text-align: center;
+    position: relative;
+    img {
+      max-width: 100%;
+      background-color: #3a5384;
+      border: none;
+      border-radius: 50%;
+      min-height: 70px;
+      min-width: 70px;
+    }
+  }
+
+  &__title {
+    margin: 18px 0 7px 0;
+    line-height: 27px;
+    font-weight: 400;
+    color: #212529;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover:after {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      content: attr(data-name);
+      display: inline-block;
+
+      background-color: rgba(0, 0, 0, 0.8);
+      box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 400;
+      color: #fefefe;
+      z-index: 10;
+
+      padding: 8px 10px;
+    }
+  }
+
+  &__details {
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #4c4b4b;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  &__profession {
+  }
+
+  &__email {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover:after {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      content: attr(data-email);
+      display: inline-block;
+
+      background-color: rgba(0, 0, 0, 0.8);
+      box-shadow: 0px 4px 4px 1px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+
+      font-size: 14px;
+      line-height: 1.2;
+      font-weight: 400;
+      color: #fefefe;
+
+      padding: 8px 10px;
+    }
+  }
+
+  &__tel {
+  }
+}
+
+// } cheerful users

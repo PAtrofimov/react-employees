@@ -1,0 +1,149 @@
+// register {
+  .register {
+    &__section {
+      max-width: 328px;
+      margin: 0 auto;
+      padding: 74px 0 78px 0;
+      @include respond-to(medium) {
+        & {
+          padding: 110px 0 118px 0;
+          max-width: 500px;
+        }
+      }
+      @include respond-to(large) {
+        & {
+          padding: 145px 0 162px 0;
+          max-width: none;
+        }
+      }
+    }
+
+    &__header {
+    }
+
+    &__title {
+      font-weight: 400;
+      color: #212529;
+      text-align: center;
+    }
+
+    &__attention {
+      font-size: 16px;
+      line-height: 1.5;
+      font-weight: 400;
+      color: #4c4b4b;
+      text-align: CENTER;
+
+      margin: 20px 0 26px 0;
+      @include respond-to(medium) {
+        & {
+          margin: 20px 0 26px 0;
+        }
+      }
+      @include respond-to(large) {
+        & {
+          margin: 20px 0 35px 0;
+        }
+      }
+
+    }
+
+    &__form {
+
+      max-width: 334px;
+      @include respond-to(medium) {
+        & {
+          max-width: 468px;
+        }
+      }
+      margin: 0 auto;
+    }
+
+    &__inputs {
+      margin: 0 0 30px 0;
+      label {
+        display: inline-block;
+        font-size: 16px;
+        font-weight: 400;
+        color: #212529;
+
+        margin: 0 0 11px 0;
+        @include respond-to(medium) {
+          & {
+            margin: 0 0 11px 0;
+          }
+        }
+        @include respond-to(large) {
+          & {
+            margin: 0 0 9px 0;
+          }
+        }
+
+      }
+    }
+
+    &__input {
+      margin: 0 0 25px 0;
+      input {
+        font-size: 16px;
+        font-weight: 400;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+        width: 100%;
+        padding: 7px 5px 7px 5px;
+      }
+
+      &.radiobtn {
+        margin: 0;
+        input {
+          width: auto;
+        }
+
+        & p:first-child {
+          margin: 0 0 22px 0;
+        }
+
+        & label {
+          margin: 0 0 13px 0;
+        }
+
+        & p:last-child label {
+          margin: 0;
+        }
+
+      }
+
+      & .assistive-text {
+        margin: 5px 0 0 0;
+        @include respond-to(medium) {
+          & {
+            margin: 5px 0 0 0;
+          }
+        }
+        @include respond-to(large) {
+          & {
+            margin: 9px 0 0 0;
+          }
+        }
+
+    }
+
+  }
+
+    &__actions {
+      text-align: center;
+      margin: 35px 0 0 0;
+    }
+
+    &__link {
+      font-size: 16px;
+      font-weight: 600;
+      color: #fefefe;
+      display: inline-block;
+      padding: 11px 58px;
+      background-color: #ef5b4c;
+      border-radius: 4px;
+    }
+  }
+
+  // } register
