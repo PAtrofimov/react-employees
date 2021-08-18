@@ -1,0 +1,34 @@
+/**
+  * Basic styles for links
+  */
+.custom-link {
+  &:link {
+    color: #212529;
+  }
+
+  background: #fff;
+  text-decoration: none;
+
+  &--light {
+    &:link {
+      color: #fff;
+    }
+    background: #1b4a8a;
+  }
+
+  // &:visited {
+  //   color: #1b4a8a;
+  // }
+
+  &:focus {
+    color: #1b4a8a;
+  }
+
+  // &:not:focus {
+  //   color: red;
+  // }
+
+  &:hover {
+    color: #ef5b4c;
+  }
+}

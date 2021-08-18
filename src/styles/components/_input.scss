@@ -1,0 +1,106 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.assistive-text {
+  font-size: 12px;
+  line-height: 1.2;
+  color: #212529;
+
+  &--error {
+    color: #f44336;
+  }
+}
+
+
+.input {
+  color: #404040;
+  font-size: 16px;
+  font-weight: 400;
+  width: 100%;
+  // padding: 7px 5px 7px 5px;
+
+  & input {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    &:focus {
+      border: 3px solid rgba(128, 189, 255, 0.2);
+      border-radius: 4px;
+    }
+  }
+
+  & label {
+    font-size: 16px;
+    color: #212529;
+  }
+
+  &::placeholder {
+    font-size: 16px;
+    color: #b2b9c0;
+  }
+
+  &.input-error input {
+    border: 3px solid rgba(219, 52, 69, 0.2);
+    border-radius: 4px;
+  }
+
+  & input:disabled,
+  & input[disabled] {
+    color: #767e86;
+  }
+}
+
+//input file
+
+.upload__file {
+  .main_input_file {
+    // display: none;
+    opacity: 0;
+    // visibility: hidden;
+    // position: absolute;
+    // top: -9999px;
+    // left: -9999px;
+  }
+
+  & p:first-child {
+    margin: 18px 0 12px 0;
+  }
+
+
+  .upload__label {
+    display: flex;
+
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    &:focus-within {
+      border: 3px solid rgba(128, 189, 255, 0.2);
+      border-radius: 4px;
+    }
+
+    &.upload__error {
+      border: 3px solid rgba(219, 52, 69, 0.2);
+      border-radius: 4px;
+    }
+
+    .f_name {
+      flex: 1 1 auto;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .upload__btn {
+    flex: 0 1 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 28px;
+    font-size: 16px;
+    border: 1px solid #d4d9de;
+    border-radius: 0px 4px 4px 0px;
+    font-weight: 400;
+    color: #212529;
+    margin: 0;
+  }
+}

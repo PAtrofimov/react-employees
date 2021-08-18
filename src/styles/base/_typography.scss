@@ -1,0 +1,40 @@
+/**
+ * Basic typography style for copy text
+ */
+
+body {
+  font-family: "Open Sans", sans-serif;
+  min-width: $min-width-screen;
+  max-width: $max-width-screen;
+}
+
+.heading1 {
+
+
+  @include respond-to(small) {
+    & {
+      font-size: 30px;
+      line-height: 34px;
+    }
+  }
+
+  @include respond-to(medium) {
+    & {
+      font-size: 40px;
+      line-height: 44px;
+    }
+  }
+  
+  @include respond-to(large) {
+    & {
+      font-size: 50px;
+      line-height: 54px;
+    }
+  }
+
+}
+
+.heading2 {
+  font-size: 24px;
+  line-height: 29px;
+}

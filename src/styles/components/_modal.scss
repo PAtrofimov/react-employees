@@ -1,0 +1,58 @@
+
+.modalDialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0, 0.5);
+  z-index: 10;
+  transition: opacity 400ms ease-in;
+
+  &__content {
+    width: 400px;
+    position: relative;
+    margin: 10% auto;
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  &__text {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #4c4b4b;
+    padding: 20px 15px;
+    border-top: 1px solid #eceef1;
+    border-bottom: 1px solid #eceef1;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 400;
+    color: #000000;
+    padding: 20px 15px;
+  }
+
+  &__actions {
+    padding: 15px;
+    text-align: right;
+  }
+
+  &__btn {
+    padding: 12px 20px;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: none;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: bold;
+  color: #7b7b7b;
+}

@@ -1,0 +1,30 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the button component.
+// -----------------------------------------------------------------------------
+
+.btn {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fefefe;
+  background-color: #ef5b4c;
+  border-radius: 4px;
+  display: inline-block;
+  &:hover {
+    background-color: #d24335;
+  }
+
+  &:disabled, &[disabled] {
+    color: #8d8c8c;
+    background-color: #d7d7d7;
+  }
+}
+
+.flat-btn {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ef5b4c;
+  display: inline-block;
+  &:hover {
+    color: #d24335;
+  }
+}
