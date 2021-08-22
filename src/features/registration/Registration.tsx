@@ -11,14 +11,14 @@ export default function Registration() {
   const [positions, setPositions] = useState<Position[]>([]);
   const [position, setPosition] = useState<Position | null>(null);
   const [serverResponse, setServerResponse] = useState<ServerResponse | null>(null);
-  const name = useInput({ field: "name", value: "", ref: null }, useMemo(() => ({ isEmpty: true, minLength: 1, maxLength: 60 }), []));
+  const name = useInput({ field: "name", value: "", ref: null }, useMemo(() => ({ isEmpty: true, minLength: 2, maxLength: 60 }), []));
   const email = useInput({ field: "email", value: "", ref: null }, useMemo(() => ({ isEmpty: true, isEmail: true }), []));
   const phone = useInput({ field: "phone", value: "", ref: null }, useMemo(() => ({ isEmpty: true, isPhone: true }), []));
   const fileInput = useRef<HTMLInputElement>(null);
   const photo = useInput({ field: "photo", value: "", ref: fileInput }, useMemo(() => ({ isEmpty: true, maxSize: true, fileType: true, fileRezolution: true }), []));
   const photoUrl = useRef<String>("");
   const [isFormValid, setFormValid] = useState<boolean>(false);
-  const [isModal, setModal] = React.useState(false);
+  const [isModal, setModal] = useState(false);
   const onClose = () => setModal(false);
 
   const handlePhoto = (e: any) => {
@@ -30,13 +30,14 @@ export default function Registration() {
   }
 
   useEffect(() => {
+    const fields = [name, phone, photo, email];
     const isFormError = () => {
-      const fields = [name, phone, photo, email];
-      const result = fields.filter(el => el.isDirty).some(el => Object.entries(el.message).find(([key, value]: any) => value.fails) !== undefined);
+      //const result = fields.some(el => Object.entries(el.message).find(([_, value]: any) => value.fails) !== undefined);
+      const result = fields.some(el => !el.isValidInput);
       return result;
     }
 
-    if (isFormError() || serverResponse?.success) {
+    if (isFormError()) {
       setFormValid(false);
     } else {
       setFormValid(true);
@@ -63,6 +64,12 @@ export default function Registration() {
             email.setValueHandle('');
             phone.setValueHandle('');
             photo.setValueHandle('');
+            if (fileInput && fileInput.current && fileInput.current.value) {
+              fileInput.current.value = "";
+            }
+            if (positions && positions.length > 0) {
+              setPosition(positions[0]);
+            }
             photoUrl.current = "";
             setServerResponse(originalPromiseResult?.status);
             setModal(true);
@@ -81,8 +88,8 @@ export default function Registration() {
   }
 
   const getClientErrors = (el: any) => {
-    if (el.isDirty) {
-      return Object.entries(el.message).filter(([key, value]: [string, any]) => value.fails);
+    if (el.isDirty && !el.isValidInput) {
+      return Object.entries(el.message).filter(([_, value]: [string, any]) => value.fails);
     }
     return [];
   }
@@ -95,8 +102,8 @@ export default function Registration() {
   const getServerErrors = (el: string) => {
     if (serverResponse && serverResponse.fails) {
       return Object.entries(serverResponse.fails)
-        .filter(([key, value]) => (el === key))
-        .map(([key, value]) => value);
+        .filter(([key, _]) => (el === key))
+        .map(([_, value]) => value);
     }
     return [];
   }
@@ -240,7 +247,7 @@ export default function Registration() {
                     placeholder="Upload your photo"
                     readOnly
                   />
-                  <div className="upload__btn" >Browse</div>
+                  <div className="upload__btn">Browse</div>
                 </label>
                 {showClientErrors(photo)}
                 {showServerErrors('photo')}
